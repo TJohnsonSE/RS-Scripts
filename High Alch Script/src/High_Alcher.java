@@ -258,14 +258,11 @@ public class High_Alcher extends LoopScript {
         if (myBank().contains("Nature rune")) {
 
             myBank().withdrawAll("Nature rune"); // Withdraw all Nature runes
-            myBank().close();
             walk().walkTo(new Tile(3157, 3485));
             return true;
         }
 
         else {
-
-            myBank().close();
 
             setStatus("Buying nature runes from Grand Exchange");
 
