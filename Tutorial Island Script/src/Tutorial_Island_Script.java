@@ -10,6 +10,7 @@ import com.epicbot.api.shared.webwalking.model.RSBank;
 import com.epicbot.api.shared.entity.*;
 import com.epicbot.api.shared.methods.IBankAPI;
 import com.epicbot.api.shared.methods.ICameraAPI;
+import com.epicbot.api.shared.methods.IDialogueAPI;
 import com.epicbot.api.shared.methods.IDiscordAPI;
 import com.epicbot.api.shared.methods.IEquipmentAPI;
 import com.epicbot.api.shared.methods.IGameAPI;
@@ -117,6 +118,10 @@ public class Tutorial_Island_Script extends LoopScript {
         return getAPIContext().grandExchange();
     }
 
+    public IDialogueAPI dialogue() {
+        return getAPIContext().dialogues();
+    }
+
     public ISkillsAPI playerSkills() {
         return getAPIContext().skills();
     }
@@ -143,8 +148,8 @@ public class Tutorial_Island_Script extends LoopScript {
         }
 
         NPC gielinorGuide = npcs().query().named("Gielinor Guide").reachable().results().first();
-        
-        if(gielinorGuide.canReach(getAPIContext())){
+
+        if (gielinorGuide.canReach(getAPIContext())) {
 
             gielinorGuide.click();
         }
